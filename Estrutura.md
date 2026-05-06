@@ -1,4 +1,4 @@
-# 🔴 Pokédex — Projeto de Faculdade
+# 🔴 Pokédex  Projeto de Faculdade
 
 Plataforma web em **React + TypeScript** que busca dados de Pokémon pela [PokéAPI](https://pokeapi.co/), exibindo card com foto, descrição, atributos e cadeia evolutiva completa.
 
