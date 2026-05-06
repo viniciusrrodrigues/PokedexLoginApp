@@ -1,0 +1,261 @@
+.pokemon-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1.5px solid var(--card-accent);
+  border-radius: 24px;
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow:
+    0 0 40px var(--card-glow),
+    0 0 80px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  animation: cardReveal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(32px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Decorative background circles */
+.card-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--card-accent);
+  opacity: 0.04;
+  pointer-events: none;
+}
+.card-circle--1 {
+  width: 300px; height: 300px;
+  top: -100px; right: -80px;
+}
+.card-circle--2 {
+  width: 200px; height: 200px;
+  bottom: -60px; left: -60px;
+}
+
+/* Header */
+.card-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.card-id {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.6rem;
+  color: var(--card-accent);
+  opacity: 0.7;
+}
+
+.card-genus {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+  font-family: 'Nunito', sans-serif;
+}
+
+.card-name {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 0 20px var(--card-glow);
+  letter-spacing: 0.02em;
+}
+
+.card-types {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.type-badge {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--card-accent);
+  box-shadow: 0 2px 8px var(--card-glow);
+}
+
+/* Type-specific badge colors */
+.type-badge--fire     { background: #FF6B35; }
+.type-badge--water    { background: #1E88E5; }
+.type-badge--grass    { background: #388E3C; }
+.type-badge--electric { background: #F9A825; color: #111; }
+.type-badge--psychic  { background: #C2185B; }
+.type-badge--ice      { background: #0097A7; }
+.type-badge--dragon   { background: #512DA8; }
+.type-badge--dark     { background: #4E342E; }
+.type-badge--fairy    { background: #D81B60; }
+.type-badge--fighting { background: #C62828; }
+.type-badge--poison   { background: #7B1FA2; }
+.type-badge--ground   { background: #8D6E63; }
+.type-badge--rock     { background: #795548; }
+.type-badge--bug      { background: #689F38; }
+.type-badge--ghost    { background: #512DA8; }
+.type-badge--steel    { background: #546E7A; }
+.type-badge--flying   { background: #0288D1; }
+.type-badge--normal   { background: #757575; }
+
+/* Image */
+.card-image-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0 1.25rem;
+  z-index: 1;
+}
+
+.card-image-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--card-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.card-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 24px var(--card-glow));
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Description */
+.card-description {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+  margin: 0 0 1.5rem;
+  padding: 0 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Info grid */
+.card-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-info-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.info-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--card-accent);
+  opacity: 0.8;
+}
+
+.info-value {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Stats */
+.card-stats {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+}
+
+.stats-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  color: var(--card-accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+  opacity: 0.8;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 36px 36px 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-name {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.45rem;
+  color: rgba(255,255,255,0.5);
+  text-align: right;
+}
+
+.stat-value {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.9);
+  text-align: left;
+}
+
+.stat-bar-bg {
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--card-accent), #fff);
+  border-radius: 999px;
+  box-shadow: 0 0 8px var(--card-glow);
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Evolutions */
+.card-evolutions {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 1.25rem;
+}

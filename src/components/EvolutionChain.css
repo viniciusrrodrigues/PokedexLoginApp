@@ -1,0 +1,78 @@
+.evo-chain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+.evo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.evo-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  opacity: 0.7;
+  padding: 0 0.25rem;
+}
+
+.evo-level {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.35rem;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.evo-pokemon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.6rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  transition: all 0.3s ease;
+  cursor: default;
+  min-width: 80px;
+}
+
+.evo-pokemon--active {
+  border-width: 1.5px;
+  background: rgba(255,255,255,0.08);
+}
+
+.evo-img-wrap {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
+.evo-id {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.35rem;
+  color: rgba(255,255,255,0.35);
+}
+
+.evo-name {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+}
